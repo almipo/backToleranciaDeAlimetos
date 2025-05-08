@@ -7,35 +7,44 @@ import java.util.List;
 
 
 public class ListaAlimentos {
+
     private List<Alimento> listaDeAlimentos;
+
 
     public ListaAlimentos(){
         this.listaDeAlimentos = new ArrayList<Alimento>();
     };
-
     public ListaAlimentos(Alimento alimento) {
         this.listaDeAlimentos = new ArrayList<Alimento>(Collections.singleton(alimento));
     }
 
+
+
+
+
     public void agregarAlimento(Alimento alimento) {
         listaDeAlimentos.add(alimento);
     }
-
-    public List<Alimento> getAlimentos() {
-        return listaDeAlimentos;
-    }
-
     public void eliminarAlimento(Alimento alimento) {
         listaDeAlimentos.remove(alimento);
     }
 
+
+
+
+
+
+
+
     public List<Alimento> getListaDeAlimentos() {
         return listaDeAlimentos;
     }
-
     public void setListaDeAlimentos(List<Alimento> listaDeAlimentos) {
         this.listaDeAlimentos = listaDeAlimentos;
     }
+
+
+
 
 
     public void guardarEnArchivo() {
@@ -49,8 +58,6 @@ public class ListaAlimentos {
             e.printStackTrace();
         }
     }
-
-    // Método para cargar la lista de alimentos desde el archivo CSV
     public void cargarDesdeArchivo() {
         listaDeAlimentos = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("alimentos.csv"))) {
